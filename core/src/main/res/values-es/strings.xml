@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="required_permissions_message">Permisos son requeridos</string>
+    <string name="only_one_account_per_device">La cuenta ya existe</string>
+</resources>

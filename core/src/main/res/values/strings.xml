@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_package_name" translatable="false">com.markoid.cleanbase</string>
+
+    <string name="required_permissions_message">Permissions are missing</string>
+    <string name="only_one_account_per_device">Account already exists</string>
+</resources>
