@@ -1,0 +1,32 @@
+android {
+    buildTypes {
+        debug {
+            //Services
+            buildConfigField "String", "VALIDATE", '\"validate\"'
+            buildConfigField "String", "REGISTER", '\"register\"'
+            buildConfigField "String", "SEND_DEVICES", '\"status\"'
+
+            //Bluetooth configurations
+            buildConfigField "long", "REPORT_DELAY", '10000' //10 seconds
+            buildConfigField "long", "SCAN_DURATION", '900000' //15 minutes
+            buildConfigField "long", "ADVERTISING_DURATION", '900000' //15 minutes
+
+            //Other configurations
+            buildConfigField "int", "SERVICE_FOREGROUND_NOTIFICATION_ID", '836217'
+        }
+        release {
+            //Services
+            buildConfigField "String", "VALIDATE", '\"validate\"'
+            buildConfigField "String", "REGISTER", '\"register\"'
+            buildConfigField "String", "SEND_DEVICES", '\"status\"'
+
+            //Bluetooth configurations
+            buildConfigField "long", "REPORT_DELAY", '10000' //10 seconds
+            buildConfigField "long", "SCAN_DURATION", '900000' //15 minutes
+            buildConfigField "long", "ADVERTISING_DURATION", '900000' //15 minutes
+
+            //Other configurations
+            buildConfigField "int", "SERVICE_FOREGROUND_NOTIFICATION_ID", '836217'
+        }
+    }
+}
