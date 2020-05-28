@@ -19,14 +19,14 @@ android {
             storePassword RELEASE_STORE_PASSWORD
         }
     }
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion rootProject.ext.compile_sdk_version
+    buildToolsVersion rootProject.ext.build_tools_version
     defaultConfig {
         applicationId "com.markoid.cleanbase"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_version
+        versionCode rootProject.ext.version_code
+        versionName rootProject.ext.version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -48,6 +48,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':core')
 
+    kapt 'com.google.dagger:dagger-android-processor:2.20'
+    kapt 'com.google.dagger:dagger-compiler:2.20'
     kapt "androidx.room:room-compiler:2.2.5"
 
     //Testing

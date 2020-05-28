@@ -4,14 +4,14 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion rootProject.ext.compile_sdk_version
+    buildToolsVersion rootProject.ext.build_tools_version
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_version
+        versionCode rootProject.ext.version_code
+        versionName rootProject.ext.version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -25,37 +25,6 @@ android {
     }
 
 }
-
-/*configurations.all
-        {
-            resolutionStrategy.eachDependency { details ->
-                if (details.requested.group == 'androidx.room'
-                        && !details.requested.name.contains('room-runtime')) {
-                    details.useVersion "2.0.1-alpha04"
-                }
-                if (details.requested.group == 'androidx.room'
-                        && !details.requested.name.contains('room-testing')) {
-                    details.useVersion "2.1.0-alpha04"
-                }
-                if (details.requested.group == 'androidx.room'
-                        && !details.requested.name.contains('room-rxjava2')) {
-                    details.useVersion "2.1.0-alpha04"
-                }
-                if (details.requested.group == 'androidx.room'
-                        && !details.requested.name.contains('room-common')) {
-                    details.useVersion "2.1.0-alpha04"
-                }
-                if (details.requested.group == 'androidx.room'
-                        && !details.requested.name.contains('room-migration')) {
-                    details.useVersion "2.1.0-alpha04"
-                }
-                if (details.requested.group == 'androidx.room'
-                        && !details.requested.name.contains('room-compiler')) {
-                    details.useVersion "2.1.0-alpha04"
-                }
-            }
-        }*/
-
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
