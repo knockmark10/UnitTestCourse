@@ -1,9 +1,9 @@
 package com.markoid.cleanbase.user.data.mappers
 
-import com.markoid.cleanbase.user.data.entities.LoginRequest
-import com.markoid.cleanbase.user.data.entities.LoginScheme
-import com.markoid.cleanbase.user.data.entities.RegisterRequest
-import com.markoid.cleanbase.user.data.entities.RegisterScheme
+import com.markoid.cleanbase.user.data.entities.requests.LoginRequest
+import com.markoid.cleanbase.user.data.entities.schemes.LoginScheme
+import com.markoid.cleanbase.user.data.entities.requests.RegisterRequest
+import com.markoid.cleanbase.user.data.entities.schemes.RegisterScheme
 import javax.inject.Inject
 
 class UserMapper @Inject constructor() {

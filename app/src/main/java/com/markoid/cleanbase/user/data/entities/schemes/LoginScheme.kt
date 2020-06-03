@@ -1,4 +1,4 @@
-package com.markoid.cleanbase.user.data.entities
+package com.markoid.cleanbase.user.data.entities.schemes
 
 data class LoginScheme(
     val email: String = "",

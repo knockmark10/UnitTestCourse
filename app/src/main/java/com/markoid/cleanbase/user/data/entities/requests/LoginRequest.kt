@@ -1,4 +1,4 @@
-package com.markoid.cleanbase.user.data.entities
+package com.markoid.cleanbase.user.data.entities.requests
 
 import com.google.gson.annotations.SerializedName
 
