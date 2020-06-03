@@ -15,3 +15,8 @@
 app/libs/
 core/libs/
 libs/
+app/src/main/java/com/markoid/cleanbase/movies/domain/exceptions/
+app/src/main/java/com/markoid/cleanbase/movies/presentation/
+app/src/main/java/com/markoid/cleanbase/user/presentation/
+core/src/androidTest/
+core/src/test/
