@@ -1,8 +1,8 @@
 package com.markoid.cleanbase.user.data.repositoryImpl
 
 import com.markoid.cleanbase.user.data.dataSourceImpl.UserDataSourceImpl
-import com.markoid.cleanbase.user.data.entities.requests.LoginRequest
 import com.markoid.cleanbase.user.data.entities.requests.RegisterRequest
+import com.markoid.cleanbase.user.data.entities.schemes.LoginScheme
 import com.markoid.cleanbase.user.data.mappers.UserMapper
 import com.markoid.cleanbase.user.domain.repositoryAbstraction.UserRepository
 import com.markoid.core.data.net.entities.BaseResponse
@@ -12,11 +12,11 @@ import javax.inject.Inject
 class UserRepositoryImpl
 @Inject constructor(
     private val userMapper: UserMapper,
-    private val registerDataSourceImpl: UserDataSourceImpl
+    private val userDataSourceImpl: UserDataSourceImpl
 ) : UserRepository {
 
     override fun register(registerRequest: RegisterRequest): Observable<BaseResponse> = TODO()
 
-    override fun login(loginRequest: LoginRequest): Observable<BaseResponse> = TODO()
+    override fun login(loginScheme: LoginScheme): Observable<BaseResponse> = TODO()
 
 }

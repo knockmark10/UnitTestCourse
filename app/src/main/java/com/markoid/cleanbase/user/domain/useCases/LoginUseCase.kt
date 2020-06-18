@@ -2,6 +2,7 @@ package com.markoid.cleanbase.user.domain.useCases
 
 import com.markoid.cleanbase.user.data.entities.schemes.LoginScheme
 import com.markoid.cleanbase.user.domain.repositoryAbstraction.UserRepository
+import com.markoid.cleanbase.user.presentation.managers.EmailValidator
 import com.markoid.core.domain.executors.PostExecutionThread
 import com.markoid.core.domain.executors.ThreadExecutor
 import com.markoid.core.domain.useCases.UseCase
@@ -10,6 +11,7 @@ import javax.inject.Inject
 
 class LoginUseCase
 @Inject constructor(
+    private val emailValidator: EmailValidator,
     private val repository: UserRepository,
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread

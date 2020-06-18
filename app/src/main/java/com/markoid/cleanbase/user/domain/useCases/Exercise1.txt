@@ -1,0 +1,24 @@
+Description:
+Your goal is to finish RegisterUseCase class implementation using Uncle Bob's TDD technique.
+
+The three rules:
+1) You are not allowed to write any production code unless it is to make a failing unit test pass
+2) You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures
+3) You are not allowed to write any more production code than is sufficient to pass the one failing unit test
+
+The requirements:
+1) You must validate RegisterScheme properties.
+2) If properties are ok, UserRepository must be called.
+3) If properties are not valid, UserRepository must not be called at all.
+4) There must be no errors.
+
+You should:
+1) Create a new test class RegisterUseCaseTest from scratch.
+2) Test drive the implementation of RegisterUseCase according to Uncle Bob's three rules of TDD.
+    Always run all the tests to make sure that further changes don't break the existing functionality.
+3) Refactor the production code.
+4) Run the tests to make sure that all of them pass after the refactoring.
+5) Refactor the tests code.
+6) Run the tests to make sure that all of them pass after the refactoring.
+7) Repeat the same procedures for UserRepositoryImpl, UserMapper and UserDataSourceImpl.
+8) Enumerate the requirements before taking actions.
