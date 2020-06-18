@@ -28,5 +28,10 @@ object UserTestData {
     val failureResponse: Response<BaseResponse>
         get() = Response.error(ERROR_CODE, ResponseBody.create(null, FAILURE_ERROR))
 
+    val emptyUserLoginScheme: LoginScheme
+        get() = LoginScheme("", PASSWORD)
+
+    val invalidUserLoginScheme: LoginScheme
+        get() = LoginScheme("asdlfikj", PASSWORD)
 
 }

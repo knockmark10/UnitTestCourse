@@ -17,6 +17,8 @@ class UserDataSourceImpl
 
     override fun register(registerRequest: RegisterRequest): Observable<BaseResponse> = TODO()
 
-    override fun login(loginRequest: LoginRequest): Observable<BaseResponse> = TODO()
+    override fun login(loginRequest: LoginRequest): Observable<BaseResponse> =
+        this.userService.login(loginRequest)
+            .flatMap { this.apiHandler.handle(it) }
 
 }

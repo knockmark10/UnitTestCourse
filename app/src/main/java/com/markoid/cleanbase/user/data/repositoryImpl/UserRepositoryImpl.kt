@@ -17,6 +17,8 @@ class UserRepositoryImpl
 
     override fun register(registerRequest: RegisterRequest): Observable<BaseResponse> = TODO()
 
-    override fun login(loginScheme: LoginScheme): Observable<BaseResponse> = TODO()
+    override fun login(loginScheme: LoginScheme): Observable<BaseResponse> =
+        Observable.just(this.userMapper.mapLoginSchemeToLoginRequest(loginScheme))
+            .flatMap { this.userDataSourceImpl.login(it) }
 
 }
