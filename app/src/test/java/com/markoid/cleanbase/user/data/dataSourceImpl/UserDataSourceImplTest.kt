@@ -1,13 +1,17 @@
 package com.markoid.cleanbase.user.data.dataSourceImpl
 
+import com.markoid.cleanbase.user.data.entities.requests.LoginRequest
 import com.markoid.cleanbase.user.data.entities.testing.UserTestData
 import com.markoid.cleanbase.user.data.services.UserService
 import com.markoid.core.data.net.entities.BaseResponse
 import com.markoid.core.data.net.handler.ApiResponseHandler
 import com.nhaarman.mockitokotlin2.any
+import com.nhaarman.mockitokotlin2.argumentCaptor
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.verify
 import io.reactivex.Observable
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.core.Is.`is`
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -47,10 +51,12 @@ class UserDataSourceImplTest {
     @Test
     fun login_requestPassedToEndpoint() {
         // Arrange
+        val argumentCaptor = argumentCaptor<LoginRequest>()
         // Act
-        this.SUT.login(UserTestData.correctLoginRequest)
+        this.SUT.login(UserTestData.correctLoginRequest).test()
         // Assert
-        verify(this.mUserServiceMock).login(any())
+        verify(this.mUserServiceMock).login(argumentCaptor.capture())
+        assertThat(argumentCaptor.firstValue, `is`(UserTestData.correctLoginRequest))
     }
 
     @Test
