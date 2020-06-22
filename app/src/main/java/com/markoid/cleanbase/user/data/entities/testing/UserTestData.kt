@@ -23,7 +23,7 @@ object UserTestData {
         get() = LoginRequest(EMAIL, PASSWORD)
 
     val successfulResponse: Response<BaseResponse>
-        get() = Response.success(BaseResponse())
+        get() = Response.success(BaseResponse("00", "Success"))
 
     val failureResponse: Response<BaseResponse>
         get() = Response.error(ERROR_CODE, ResponseBody.create(null, FAILURE_ERROR))

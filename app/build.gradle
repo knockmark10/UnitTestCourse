@@ -5,6 +5,13 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs"
 
 android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
+
     signingConfigs {
         debug {
             keyAlias STAGE_KEY_ALIAS
@@ -19,8 +26,10 @@ android {
             storePassword RELEASE_STORE_PASSWORD
         }
     }
+
     compileSdkVersion rootProject.ext.compile_sdk_version
     buildToolsVersion rootProject.ext.build_tools_version
+
     defaultConfig {
         applicationId "com.markoid.cleanbase"
         minSdkVersion rootProject.ext.min_sdk_version
@@ -68,5 +77,4 @@ dependencies {
     //Mockito library for kotlin (Instrumentation)
     androidTestImplementation('io.mockk:mockk-android:1.9.3') { exclude module: 'objenesis' }
     androidTestImplementation 'org.objenesis:objenesis:2.6'
-
 }

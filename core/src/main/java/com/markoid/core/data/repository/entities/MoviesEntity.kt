@@ -1,4 +1,4 @@
-package com.markoid.cleanbase.movies.data.repository.entities
+package com.markoid.core.data.repository.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -27,6 +27,10 @@ data class MoviesEntity(
 
     @NonNull
     @ColumnInfo(name = "synopsis")
-    val synopsis: String
+    val synopsis: String,
+
+    @NonNull
+    @ColumnInfo(name = "category")
+    val category: String
 
 )

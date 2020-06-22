@@ -1,8 +1,8 @@
 package com.markoid.cleanbase.movies.data.mappers
 
-import com.markoid.cleanbase.movies.data.entities.MoviesScheme
+import com.markoid.cleanbase.movies.data.entities.schemes.MoviesScheme
 import com.markoid.cleanbase.movies.data.net.entities.MoviesItem
-import com.markoid.cleanbase.movies.data.repository.entities.MoviesEntity
+import com.markoid.core.data.repository.entities.MoviesEntity
 import javax.inject.Inject
 
 class MoviesMapper @Inject constructor() {

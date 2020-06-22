@@ -8,7 +8,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import javax.inject.Inject
 
-class ApiResponseHandler
+open class ApiResponseHandler
 @Inject constructor(private val retrofit: Retrofit) {
 
     fun <T> handle(response: Response<T>): Observable<T> =

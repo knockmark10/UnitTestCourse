@@ -8,15 +8,15 @@ import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.verify
 import io.reactivex.Observable
-import org.bouncycastle.jcajce.provider.symmetric.ARC4
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
+import org.mockito.Mockito.times
 import org.mockito.junit.MockitoJUnitRunner
 import retrofit2.Response
 
-@RunWith(MockitoJUnitRunner::class)
+@RunWith(MockitoJUnitRunner.Silent::class)
 class UserDataSourceImplTest {
 
     // ---------START CONSTANTS--------------
@@ -44,7 +44,6 @@ class UserDataSourceImplTest {
         successResponse()
     }
 
-    //login - request passed to endpoint
     @Test
     fun login_requestPassedToEndpoint() {
         // Arrange
@@ -54,7 +53,6 @@ class UserDataSourceImplTest {
         verify(this.mUserServiceMock).login(any())
     }
 
-    //login - response handled correctly
     @Test
     fun login_responseHandledCorrectly() {
         // Arrange
@@ -62,9 +60,10 @@ class UserDataSourceImplTest {
             .`when`(this.mApiHandlerMock)
             .handle<Response<BaseResponse>>(any())
         // Act
-        this.SUT.login(UserTestData.correctLoginRequest)
+        this.SUT.login(UserTestData.correctLoginRequest).test()
         // Assert
-        verify(this.mApiHandlerMock).handle<Response<BaseResponse>>(any())
+        verify(this.mApiHandlerMock, times(1))
+            .handle<Response<BaseResponse>>(any())
     }
 
     // -----------START HELPER METHODS--------

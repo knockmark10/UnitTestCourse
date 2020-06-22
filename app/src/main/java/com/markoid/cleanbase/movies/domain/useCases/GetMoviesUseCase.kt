@@ -1,6 +1,6 @@
 package com.markoid.cleanbase.movies.domain.useCases
 
-import com.markoid.cleanbase.movies.data.entities.MoviesScheme
+import com.markoid.cleanbase.movies.data.entities.schemes.MoviesScheme
 import com.markoid.core.domain.executors.PostExecutionThread
 import com.markoid.core.domain.executors.ThreadExecutor
 import com.markoid.core.domain.useCases.UseCase

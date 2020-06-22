@@ -1,4 +1,4 @@
-package com.markoid.cleanbase.movies.data.entities
+package com.markoid.cleanbase.movies.data.entities.schemes
 
 data class MoviesScheme(
     val code: String,

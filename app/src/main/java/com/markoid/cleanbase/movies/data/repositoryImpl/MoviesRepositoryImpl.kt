@@ -1,7 +1,7 @@
 package com.markoid.cleanbase.movies.data.repositoryImpl
 
 import com.markoid.cleanbase.movies.data.dataSourceImpl.MoviesDataSourceImpl
-import com.markoid.cleanbase.movies.data.entities.MoviesScheme
+import com.markoid.cleanbase.movies.data.entities.schemes.MoviesScheme
 import com.markoid.cleanbase.movies.data.mappers.MoviesMapper
 import com.markoid.cleanbase.movies.domain.repositoryAbstraction.MoviesRepository
 import io.reactivex.Observable
